@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js"
-  },
+  "start": "node app.js",    // Untuk produksi (Deployment)
+  "build": "echo 'Building...'"  // Placeholder untuk build
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
