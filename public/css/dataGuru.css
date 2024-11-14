@@ -1,0 +1,223 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #1a3d7c;
+    color: #fff;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    scroll-behavior: smooth; /* Perlambat efek scroll */
+}
+
+.navbar {
+    font-family: 'Jomhuria', sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000; /* Changed to black */
+    padding: 10px 20px;
+    position: fixed; /* Fixed to the top of the screen */
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    width: 100%; /* Ensure navbar takes the full width */
+    box-sizing: border-box; /* Include padding in width calculation */ 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, opacity 0.3s;
+    opacity: 1; /* Always visible without scrolling */
+}
+
+.navbar:hover {
+    background-color: #333; /* Darker shade on hover */
+}
+
+.navbar .logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo-container img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar .logo-container span {
+    color: white;
+    font-size: 20px;
+}
+
+.navbar nav {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 10px 0;
+    position: relative;
+}
+
+.navbar a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.navbar a:hover::after {
+    width: 100%;
+}
+
+.header {
+    background-color: #1a3d7c;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    margin-top: 60px; /* Adjusted to avoid overlap with navbar */
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-color: #1a3d7c;
+    color: white;
+    height: calc(100vh - 60px); /* Adjusted to avoid overlap with navbar */
+    box-sizing: border-box;
+    position: relative;
+}
+
+.intro img {
+    width: 400px; /* Decreased width */
+    height: 300px; /* Decreased height */
+    margin-left: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Ensuring no background */
+}
+
+.intro-text {
+    text-align: left;
+    max-width: 600px;
+}
+
+.intro-text h2 {
+    font-size: 36px; /* Increased font size */
+}
+
+.intro-text p {
+    font-size: 18px; /* Increased font size */
+}
+
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    background-image: url('/public/gambar/perbaiki.jpeg');
+}
+
+.profile {
+    background-color: #fff;
+    color: #333;
+    width: 80%; /* Adjusted width */
+    max-width: 800px; /* Increased max-width */
+    margin: 20px 0;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out; /* Perubahan kecepatan animasi */
+    opacity: 0;
+    transform: translateX(100%);
+    box-sizing: border-box;
+    border-radius: 10px;
+    box-shadow: 0 8px 46px rgba(23, 199, 222, 0.8); /* Tambahkan shadow di sini */
+}
+
+
+.profile:nth-child(odd) {
+    align-self: flex-start;
+    transform: translateX(-100%);
+    flex-direction: row-reverse;
+}
+
+.profile:nth-child(even) {
+    align-self: flex-end;
+    flex-direction: row;
+}
+
+.profile img {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 10px;
+}
+
+.info {
+    flex: 1;
+    padding: 0 20px;
+    text-align: left;
+}
+
+.profile.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.intro .teacher-name {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.footer {
+    background-color: #FFFFFF; /* Dark blue background */
+    color: black; /* White text color */
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-link {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.instagram-icon {
+    width: 24px; /* Adjust icon size */
+    height: auto;
+    margin-right: 8px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}

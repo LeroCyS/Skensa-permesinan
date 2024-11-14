@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permesinan</title>
+    <link rel="icon" type="image/png" href="/gambar/OIP-removebg-preview (13).png">
+    <link href="https://fonts.googleapis.com/css2?family=Jomhuria&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/dataKelas.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img alt="Logo" height="40" src="/gambar/WhatsApp_Image_2024-11-13_at_8.19.57_AM-removebg-preview.png"
+                width="40" />
+            <span>Permesinan</span>
+        </div>
+        <div class="menu">
+            <a href="/dashboard">Home</a>
+            <a href="/guru">Profil Guru</a>
+            <a href="#">Kelas</a>
+            <a href="/">Logout</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="data-kelas">
+            <h2>Data Kelas</h2>
+            <select id="kelasSelect" onchange="showData()">
+                <option value="">Pilih Kelas</option>
+                <option value="XII TPM 1">XII TPM 1</option>
+                <option value="XII TPM 2">XII TPM 2</option>
+                <option value="XI TPM 1">XI TPM 1</option>
+                <option value="XI TPM 2">XI TPM 2</option>
+                <option value="X TPM 1">X TPM 1</option>
+                <option value="X TPM 2">X TPM 2</option>
+            </select>
+            <input type="text" id="searchInput" placeholder="Cari NIS atau Nama" onkeyup="showData()" />
+            <div style="overflow-x:auto;">
+                <table class="data-table" id="dataTable"></table>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/dataKelas.js"></script>
+</body>
+
+</html>

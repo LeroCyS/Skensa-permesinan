@@ -1,0 +1,278 @@
+/* Basic Styles */
+body {
+    margin: 0;
+    font-family: 'Jomhuria', sans-serif;
+    background-color: #0F2E64;
+    overflow-x: hidden;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100vh; 
+}
+
+/* Navbar */
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 3;
+}
+
+.navbar .logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar .logo img {
+    width: 35px;
+    height: 35px;
+    margin-right: 10px;
+}
+
+.navbar .logo a {
+    color: black;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Gambar pertama (whitebg) - lebih kecil dan menjorok */
+.whitebg {
+    position: absolute;
+    width: 80%; /* Skala lebih kecil */
+    height: auto; /* Menjaga proporsi */
+    object-fit: cover;
+    z-index: 1; /* Di belakang navbar */
+}
+
+/* Gambar kedua (overlay-img) - lebih kecil dan menjorok */
+.overlay-img {
+    position: absolute;
+    top: 20px; /* Menjorok lebih dalam dibandingkan whitebg */
+    width: 70%; /* Skala lebih kecil dari whitebg */
+    left: -5%;
+    height: auto;
+    object-fit: cover;
+    z-index: 2; /* Di atas whitebg tapi di bawah navbar */
+}
+
+/* Pembungkus Teks Utama */
+.text-wrapper {
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    z-index: 4;
+    width: 100%;
+    padding: 20px; /* Memberikan ruang agar teks dan ikon tidak saling bertabrakan */
+}
+
+/* Teks utama */
+.main-text {
+    font-size: 2.5rem;
+    color: #FFFFFF; /* Warna putih agar kontras */
+    text-align: center; /* Mengubah agar teks tetap rata tengah */
+    max-width: 100%; /* Membatasi lebar teks */
+    white-space: nowrap; /* Mencegah teks terbungkus */
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+/* Ikon pertama - di atas kiri */
+.icon {
+    position: absolute;
+    left: 30%; /* Posisi di kiri */
+    transform: translate(-50%, -60%); /* Menghapus transformasi yang menggeser */
+    width: 120px;
+    height: auto;
+}
+
+/* Ikon kedua - di bawah kanan */
+.icon1 {
+    position: absolute;
+    right: 30%; /* Posisi di kanan */
+    transform: translate(50%, 0%); /* Menghapus transformasi yang menggeser */
+    width: 130px;
+    height: auto;
+}
+
+#active {
+    text-decoration: underline;
+}
+
+/* Card Container */
+/* Mengatur kontainer card untuk perspektif */
+/* Mengatur kontainer card untuk perspektif */
+.card-container {
+    display: flex;
+    justify-content: space-evenly;  /* Memastikan jarak antar card tetap */
+    width: 100%;
+    gap: 10px;  /* Jarak antar card */
+    perspective: 1500px; /* Menambahkan perspektif untuk efek 3D */
+}
+
+/* Wrapper untuk card (untuk flip efek) */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Menjaga elemen dalam ruang 3D */
+    transition: transform 0.6s; /* Durasi flip */
+    /* Menjaga card tetap pada tempat yang sama */
+}
+
+/* Menambahkan efek flip pada saat hover */
+.card:hover .card-inner {
+    transform: rotateY(180deg); /* Memutar card 180 derajat pada sumbu Y */
+}
+
+/* Desain untuk sisi depan card */
+.card-front, .card-back {
+    transform: translate(-10%, -10%); /* Menghapus transformasi yang menggeser */
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    backface-visibility: hidden; /* Menyembunyikan sisi belakang saat diputar */
+}
+
+/* Desain untuk sisi depan card */
+/* Desain untuk sisi depan card */
+.card-front1 {
+    background-image: url('/gambar/WhatsApp\ Image\ 2024-11-11\ at\ 09.05.38\ \(1\).jpeg'); /* Ganti dengan URL gambar yang diinginkan */
+    background-size: cover; /* Agar gambar menutupi seluruh area */
+    background-position: center; /* Agar gambar terpusat */
+    color: #0F2E64;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Menjaga ukuran card sama */
+}
+.card-front2 {
+    background-image: url('/gambar/perbaiki.jpeg'); /* Ganti dengan URL gambar yang diinginkan */
+    background-size: cover; /* Agar gambar menutupi seluruh area */
+    background-position: center; /* Agar gambar terpusat */
+    color: #0F2E64;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Menjaga ukuran card sama */
+}
+.card-front3 {
+    background-image: url('/gambar/permesinan.jpeg'); /* Ganti dengan URL gambar yang diinginkan */
+    background-size: cover; /* Agar gambar menutupi seluruh area */
+    background-position: center; /* Agar gambar terpusat */
+    color: #0F2E64;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Menjaga ukuran card sama */
+}
+
+
+/* Desain untuk sisi belakang card */
+.card-back {
+    background-color: #0F2E64;
+    color: #FFFFFF;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: rotateY(180deg); /* Memutar sisi belakang */
+    /* Menjaga ukuran card sama */
+}
+
+/* Card Styles - Menjaga ukuran dan margin agar tetap konsisten */
+.card {
+    color: #0F2E64;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1; /* Mengatur agar card fleksibel */
+    max-width: 33%; /* Lebar card sama seperti sebelumnya */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    height: 200px; /* Menjaga tinggi card tetap sama */
+}
+
+/* Card-3 Spesifik */
+.card-3 {
+    margin-top: -110px;  /* Card 3 menumpuk dengan card di atasnya */
+    height: 290px;  /* Menjaga ukuran card */
+}
+
+/* Card-x Spesifik */
+.card-x {
+    margin-top: -13px;
+}
+
+/* Footer */
+/* Footer Styles */
+.footer {
+    background-color: #FFFFFF; /* Dark blue background */
+    color: black; /* White text color */
+    text-align: center;
+    margin-top: 70px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-link {
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.footer-link:hover {
+    text-decoration: underline;
+}
+
+.instagram-icon {
+    width: 24px; /* Adjust icon size */
+    height: auto;
+    margin-right: 8px;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+}

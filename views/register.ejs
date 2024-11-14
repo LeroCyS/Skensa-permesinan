@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Permesinan</title>
+    <link rel="icon" type="image/png" href="/gambar/OIP-removebg-preview (13).png">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <div class="container">
+        <div class="forms" id="forms-container">
+            <div class="sign-up">
+                <h2>Sign Up</h2>
+                <img src="/gambar/OIP-removebg-preview (13).png" alt="" class="IMGGE">
+                <form action="/register" method="POST" class="form">
+                    <div class="input-field">
+                        <input type="text" name="username" placeholder="Username" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="email" name="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn">Sign Up</button>
+                </form>
+                <p class="toggle-button">
+                    Already have an account? <a href="/login">Sign In</a>
+                </p>
+            </div>
+            
+            <% if (message) { %>
+                <div class="alert alert-error"><%= message %></div>
+            <% } %>
+            <% if (success) { %>
+                <div class="alert alert-success"><%= success %></div>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>
